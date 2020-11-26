@@ -7,10 +7,35 @@
   <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700" rel="stylesheet" />
   <link rel="stylesheet" href="src/sass/main.scss" />
 
-  <title>My Recipes - Search over 1,000,000 recipes</title>
+  <title>Forkify - Search over 1,000,000 recipes</title>
 </head>
 
 <body>
-
+  <div class="container">
+    <header class="header">
+      <img src="src/img/logo.png" alt="logo" class="header_logo" />
+      <form class="search">
+        <input type="text" class="search_field" placeholder="Search over 1,000,000 recipes..." />
+        <button class="btn search_btn">
+          <span>Search<span>
+        </button>
+      </form>
+      <nav class="nav">
+        <ul class="nav_list">
+          <li class="nav_item">
+            <button class="nav_btn nav_btn--add-recipe">
+              <span>Add Recipe</span>
+            </button>
+          </li>
+          <li class="nav_item">
+            <button class="nav_btn nav_btn--bookmarks">
+              <span>Bookmarks</span>
+            </button>
+          </li>
+        </ul>
+      </nav>
+      
+    </header>
+  </div>
 </body>
 </html>

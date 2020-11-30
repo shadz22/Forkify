@@ -1,0 +1,25 @@
+{
+  "name": "forkify",
+  "version": "1.0.0",
+  "description": "A recipe finder application",
+  "main": "index.html",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shadz22/Forkify.git"
+  },
+  "author": "Shadi Khazaei",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shadz22/Forkify/issues"
+  },
+  "homepage": "https://github.com/shadz22/Forkify#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "parcel": "^2.0.0-beta.1",
+    "sass": "^1.29.0"
+  }
+}

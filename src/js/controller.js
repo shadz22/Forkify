@@ -20,8 +20,7 @@ const showRecipe = async function() {
       image: recipe.image_url,
       ingredients: recipe.ingredients
     };
-    // console.log(recipe);
-    console.log(icons);
+    console.log(recipe);
 
     const markup = `
     <figure class="recipe__fig">
@@ -39,6 +38,15 @@ const showRecipe = async function() {
         <span class="recipe__info-data recipe__info-data--minutes">${recipe.cookingTime}</span>
         <span class="recipe__info-text">minutes</span>
       </div>
+
+      <div class="recipe__info">
+        <svg class="recipe__info-icon">
+          <use href="${icons}#icon-users"></use>
+        </svg>
+        <span class="recipe__info-data recipe__info-data--people">${recipe.servings}</span>
+        <span class="recipe__info-text">servings</span>
+      </div>
+
     </div>
 
         `;

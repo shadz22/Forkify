@@ -60,9 +60,17 @@ const showRecipe = async function() {
         </div>
       </div>
 
-
+      <div class="recipe__user-generated">
+        <svg>
+          <use href="${icons}#icon-user"></use>
+        </svg>
+      </div>
+      <button class="btn--round">
+        <svg>
+          <use href="${icons}#icon-bookmark-fill"></use>
+        </svg>
+      </button>
     </div>
-
         `;
     recipeContainer.insertAdjacentHTML('afterbegin', markup);
 

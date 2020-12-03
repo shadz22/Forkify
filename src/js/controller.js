@@ -45,7 +45,21 @@ const showRecipe = async function() {
         </svg>
         <span class="recipe__info-data recipe__info-data--people">${recipe.servings}</span>
         <span class="recipe__info-text">servings</span>
+
+        <div class="recipe__info-buttons">
+          <button class="btn--tiny btn--increase-servings">
+            <svg>
+              <use href="${icons}#icon-minus-circle"></use>
+            </svg>
+          </button>
+          <button class="btn--tiny btn--increase-servings">
+            <svg>
+              <use href="${icons}#icon-plus-circle"></use>
+            </svg>
+          </button>
+        </div>
       </div>
+
 
     </div>
 

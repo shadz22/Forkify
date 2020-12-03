@@ -87,13 +87,10 @@
     font-weight: 700;
   }
 
-
-
-
-  // svg {
-  //   height: 2.25rem;
-  //   width: 2.25rem;
-  //   fill: $color-primary;
-  // }
+  &__info-buttons {
+    display: flex;
+    margin-left: 1.6rem;
+    transform: translateY(-1px)
+  }
 
 }

@@ -17,8 +17,18 @@ const showRecipe = async function() {
       cookingTime: recipe.cooking_time,
       image: recipe.image_url,
       ingredients: recipe.ingredients
-    }
+    };
     console.log(recipe);
+
+    const markup = `
+    <figure class="recipe__fig">
+          <img src="${recipe.image}" alt="Tomato" class="recipe__img" />
+          <h1 class="recipe__title">
+            <span>${recipe.title}</span>
+          </h1>
+        </figure>
+        `;
+    recipeContainer.insertAdjacentHTML('afterbegin', markup);
 
   } catch(err) {
     alert(err);

@@ -17,9 +17,12 @@
     "url": "https://github.com/shadz22/Forkify/issues"
   },
   "homepage": "https://github.com/shadz22/Forkify#readme",
-  "dependencies": {},
+  "dependencies": {
+    "core-js": "^3.8.1",
+    "regenerator-runtime": "^0.13.7"
+  },
   "devDependencies": {
-    "parcel": "^2.0.0-beta.1",
+    "parcel": "^2.0.0-nightly.477",
     "sass": "^1.29.0"
   }
 }

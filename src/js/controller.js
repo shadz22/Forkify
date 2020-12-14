@@ -1,10 +1,17 @@
 import icons from 'url:../img/icons.svg';
+import 'core-js/stable';
+import 'regenerator-runtime/runtime';
 
 const recipeContainer = document.querySelector('.recipe');
 
 const showRecipe = async function() {
   try {
-    const res = await fetch('https://forkify-api.herokuapp.com/api/v2/recipes/5ed6604691c37cdc054bd015')
+    const id = window.location.hash.slice(1);
+    console.log(id);
+
+    if(!id) return;
+
+    const res = await fetch(`https://forkify-api.herokuapp.com/api/v2/recipes/${id}`)
     const data = await res.json();
 
     if(!res.ok) throw new Error(`${data.message}(${res.status})`);
@@ -95,7 +102,7 @@ const showRecipe = async function() {
     <div class="recipe__directions">
           <h2 class="heading--2">How to cook it</h2>
           <p class="recipe__directions-text">
-            This recipe was carefully designed and tested by
+            This recipe was designed by
             <span class="recipe__publisher">${recipe.publisher}</span>. Please check out
             directions at their website.
           </p>
@@ -119,3 +126,5 @@ const showRecipe = async function() {
   }
 }
 showRecipe();
+
+['hashchange', 'load'].forEach(ev => window.addEventListener(ev, showRecipe));

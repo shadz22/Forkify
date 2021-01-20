@@ -3,8 +3,6 @@ import recipeView from './views/recipeView.js';
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 
-const recipeContainer = document.querySelector('.recipe');
-
 const controlRecipes = async function() {
   try {
     const id = window.location.hash.slice(1);

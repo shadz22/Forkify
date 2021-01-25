@@ -3,6 +3,8 @@ import icons from 'url:../../img/icons.svg';
 
 class ResultsView extends View{
   _parentElement = document.querySelector('.results');
+  _errorMessage = "Recipe was not found! Please try again :)";
+  _message = '';
 
   _generateMarkup() {
     console.log(this._data);
@@ -25,5 +27,4 @@ class ResultsView extends View{
     `
   }
 }
-
 export default new ResultsView();

@@ -6,17 +6,53 @@ class PaginationView extends View{
   _parentElement = document.querySelector(".pagination");
 
   _generateMarkup() {
+    const currentPage = this._data.page;
     const numPages = Math.ceil(this._data.results.length / this._data.resultsPerPage);
     console.log(numPages);
-  // 1) Page 1 and there are other pages
-    if (this._data.page === 1 && numPages > 1 )
-    return 'Page 1 and others';
+  // Page 1 and there are other pages
+    if (currentPage === 1 && numPages > 1 ) {
+      return `
+        <button class="btn--inline pagination__btn--next">
+          <span>Page ${currentPage + 1}</span>
+          <svg class="search__icon">
+            <use href="${icons}#icon-arrow-right"></use>
+          </svg>
+        </button>
+      `;
+    }
 
-  // 2) Page 1 and No other pages
-
-  // 3) on Last page
-
-  // 4) other pages 
+  // on Last page
+    if (currentPage === numPages && numPages > 1) {
+      return `
+        <button class="btn--inline pagination__btn--prev">
+          <svg class="search__icon">
+            <use href="${icons}#icon-arrow-left"></use>
+          </svg>
+          <span>Page ${currentPage - 1}</span>
+        </button>
+      `;
+    }
+    
+  // Other pages 
+    if (currentPage < numPages) {
+      return `
+        <button class="btn--inline pagination__btn--prev">
+          <svg class="search__icon">
+            <use href="${icons}#icon-arrow-left"></use>
+          </svg>
+          <span>Page ${currentPage - 1}</span>
+        </button>
+        <button class="btn--inline pagination__btn--next">
+          <span>Page ${currentPage + 1}</span>
+          <svg class="search__icon">
+            <use href="${icons}#icon-arrow-right"></use>
+          </svg>
+        </button>
+      `
+    }
+    
+  // Page 1 and No other pages
+  return '';
   }
 }
 

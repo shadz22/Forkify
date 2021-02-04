@@ -48,7 +48,7 @@ class PaginationView extends View{
             <use href="${icons}#icon-arrow-right"></use>
           </svg>
         </button>
-      `
+      `;
     }
     
   // Page 1 and No other pages

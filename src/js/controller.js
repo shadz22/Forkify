@@ -15,6 +15,8 @@ const controlRecipes = async function() {
 
     if(!id) return;
 
+    resultsView.update(model.getSearchResultsPage());
+
     // 1) Loading recipe
     await model.loadRecipe(id);
 
@@ -36,7 +38,7 @@ const controlSearchResults = async function() {
     await model.loadSearchResults(query);
 
     // 3) Render search results
-    resultsView.render(model.getSearchResultsPage(3));
+    resultsView.render(model.getSearchResultsPage());
 
     // 4) Render initial pagination
     paginationView.render(model.state.search);

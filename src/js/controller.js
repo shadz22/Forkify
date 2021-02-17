@@ -8,25 +8,25 @@ import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 
 
-if(module.hot) {
-  module.hot.accept();
-}
+// if(module.hot) {
+//   module.hot.accept();
+// }
 const controlRecipes = async function() {
   try {
     const id = window.location.hash.slice(1);
 
     if(!id) return;
 
-    // Update results view to highlight the selected search result
+    // 1) Update results view to highlight the selected search result
     resultsView.update(model.getSearchResultsPage());
 
-    // Update bookmarks view
+    // 2) Update bookmarks view
     bookmarksView.update(model.state.bookmarks);
 
-    // 1) Loading recipe
+    // 3) Loading recipe
     await model.loadRecipe(id);
 
-    // 2) Rendering recipe
+    // 4) Rendering recipe
     recipeView.render(model.state.recipe);
 
   } catch(err) {
@@ -84,12 +84,17 @@ const controlAddBookmark = function(recipe) {
   bookmarksView.render(model.state.bookmarks);
 }
 
+const controlBookmarks = function() {
+  bookmarksView.render(model.state.bookmarks);
+}
+
 const init = function() {
-recipeView.addHandlerRender(controlRecipes);
-recipeView.addHandlerUpdateServings(controlServings);
-recipeView.addHandlerAddBookmark(controlAddBookmark);
-searchView.addHandlerSearch(controlSearchResults);
-paginationView.addHandlerClick(controlPagination);
+  bookmarksView.addHandlerRender(controlBookmarks);
+  recipeView.addHandlerRender(controlRecipes);
+  recipeView.addHandlerUpdateServings(controlServings);
+  recipeView.addHandlerAddBookmark(controlAddBookmark);
+  searchView.addHandlerSearch(controlSearchResults);
+  paginationView.addHandlerClick(controlPagination);
 };
 
 init();

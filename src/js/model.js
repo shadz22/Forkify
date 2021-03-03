@@ -105,6 +105,11 @@ export const deleteBookmarks = function(id) {
   persistBookmarks();
 }
 
+const clearBookmarks = function () {
+  localStorage.clear('bookmarks');
+};
+//clearBookmarks();
+
 export const uploadRecipe = async function(newRecipe) {
   try{
     const ingredients = Object.entries(newRecipe)

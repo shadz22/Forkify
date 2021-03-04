@@ -35,24 +35,24 @@ localhost:1234
 ---
 ## Search result (top of the page) 
 
-![](/src/imag/pizza_top.png)
+![](/src/img/pizza_top.png)
 
 ---
 
 ## Search result (bottom of the page) 
 
-![](/src/imag/pizza_bottom.png)
+![](/src/img/pizza_bottom.png)
 
 ---
 
 ## Hover over bookmarks
 
-![](/src/imag/bookmarks.png)
+![](/src/img/bookmarks.png)
 
 ---
 
 ## Add a new recipe
 
-![](/src/imag/Add_recipe.png)
+![](/src/img/Add_recipe.png)
 
 ---
